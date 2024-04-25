@@ -1,88 +1,166 @@
 //
 //  ContentView.swift
-//  PeekaView
-//
-//  Created by Devon Quispe on 2/29/24.
+//  GStreamerSwiftUIDemo
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+struct MainView: View {
+    
+    @ObservedObject var camViewController: CameraViewController
+    @State private var selectedImage: UIImage?
+    @State private var isShowingZoomableView = false
+    var networkListener: NetworkListener?
+    
+    init() {
+        self.camViewController = CameraViewController(camUIView: UIView())
+        self.networkListener = NetworkListener(cameraViewController: camViewController)
+    }
+    
+    func playStream() {
+        self.camViewController.play()
+    }
+    
+    func pauseStream() {
+        self.camViewController.pause()
+    }
+    
+    func captureSnapshot() {
+        self.camViewController.captureSnapshot()
+    }
+    
+    func startListening() {
+        networkListener?.start()
+    }
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        VStack {
+            
+            HStack {
+                Text("PeekaView")
+                    .font(.largeTitle)
+                    .padding()
+                    .foregroundColor(.white)
+                Spacer()
+            }
+            Divider()
+                .overlay(.white)
+            CameraContainerView(camContainerViewController: self.camViewController)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+            Divider()
+                .overlay(.white)
+            
+            HStack(spacing: 10) {
+                Button("Play") {
+                    playStream()
+                }
+                Button("Pause") {
+                    pauseStream()
+                }
+                Button("Capture") {
+                    captureSnapshot()
+                }
+                
+            }
+            .padding()
+            .background(Color.black)
+            .cornerRadius(10)
+            .foregroundColor(.white)
+            
+            ScrollView {
+                let columns = [
+                    GridItem(.flexible()),
+                    GridItem(.flexible())
+                ]
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(camViewController.imagesFromGstBackend, id: \.self) { image in
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .padding()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            
+            Divider().overlay(.white)
+            
+            Spacer()
+            VStack {
+                ColorChannelView(
+                    value: $camViewController.brightness,
+                    captionName: "Brightness",
+                    onValueChanged: camViewController.updateBrightness
+                )
+                
+                ColorChannelView(
+                    value: $camViewController.contrast,
+                    captionName: "Contrast",
+                    onValueChanged: camViewController.updateContrast
+                )
+                
+                ColorChannelView(
+                    value: $camViewController.hue,
+                    captionName: "Hue",
+                    onValueChanged: camViewController.updateHue
+                )
+                
+                ColorChannelView(
+                    value: $camViewController.saturation,
+                    captionName: "Saturation",
+                    onValueChanged: camViewController.updateSaturation
+                )
             }
-            Text("Select an item")
+//            HStack {
+//                ColorChannelView(
+//                    value: $camViewController.brightness,
+//                    captionName: "Brightness",
+//                    onValueChanged: camViewController.updateBrightness
+//                )
+//
+//                ColorChannelView(
+//                    value: $camViewController.contrast,
+//                    captionName: "Contrast",
+//                    onValueChanged: camViewController.updateContrast
+//                )
+//            }
+//            HStack {
+//                ColorChannelView(
+//                    value: $camViewController.hue,
+//                    captionName: "Hue",
+//                    onValueChanged: camViewController.updateHue
+//                )
+//
+//                ColorChannelView(
+//                    value: $camViewController.saturation,
+//                    captionName: "Saturation",
+//                    onValueChanged: camViewController.updateSaturation
+//                )
+//            }
+            
+
+            
+
+
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.white)
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+struct CameraContainerView: View {
+    @ObservedObject var camContainerViewController: CameraViewController
+    
+    var body: some View {
+        Group {
+            if camContainerViewController.gstBackend != nil {
+                camContainerViewController.cameraView
+            } else {
+                let _ = camContainerViewController.initBackend()
+                Text("Initializing GStreamer, please wait...")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }

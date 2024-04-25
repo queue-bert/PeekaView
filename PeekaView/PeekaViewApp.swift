@@ -1,20 +1,20 @@
 //
-//  PeekaViewApp.swift
-//  PeekaView
+//  GStreamerSwiftUIDemoApp.swift
+//  GStreamerSwiftUIDemo
 //
-//  Created by Devon Quispe on 2/29/24.
+//  Created by Raktim Bora on 19.06.23.
 //
 
 import SwiftUI
 
 @main
-struct PeekaViewApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct GStreamerSwiftUIDemoApp: App {
+    init(){
+        gst_ios_init()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainView()
         }
     }
 }

@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860395C52BB0D41300B53CE5 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860395C42BB0D41300B53CE5 /* GStreamer.framework */; };
+		8646BA6B2BB0DBA200C9C881 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8646BA6A2BB0DBA200C9C881 /* CoreAudio.framework */; };
+		8646BA6D2BB0DC1B00C9C881 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8646BA6C2BB0DC1B00C9C881 /* CoreMedia.framework */; };
+		8646BA6F2BB0DC4300C9C881 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8646BA6E2BB0DC4300C9C881 /* AssetsLibrary.framework */; };
+		8646BA712BB0DC9B00C9C881 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8646BA702BB0DC8B00C9C881 /* libresolv.tbd */; };
+		8681186B2B910645008A21DA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868118642B910645008A21DA /* CameraViewController.swift */; };
+		8681186C2B910645008A21DA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868118662B910645008A21DA /* CameraView.swift */; };
+		8681186D2B910645008A21DA /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 868118682B910645008A21DA /* GStreamerBackend.m */; };
+		8681186E2B910645008A21DA /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = 868118692B910645008A21DA /* gst_ios_init.m */; };
+		8681186F2B910645008A21DA /* GStreamerBackendProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681186A2B910645008A21DA /* GStreamerBackendProtocol.swift */; };
+		86AB62782BD176220084FA6B /* ColorChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB62772BD176220084FA6B /* ColorChannelView.swift */; };
+		86AB627E2BD178A90084FA6B /* NetworkListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB627D2BD178A90084FA6B /* NetworkListener.swift */; };
+		86D711812B9A341000EC783F /* libcmph.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711802B9A341000EC783F /* libcmph.tbd */; };
+		86D711832B9A341A00EC783F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711822B9A341A00EC783F /* AudioToolbox.framework */; };
+		86D711852B9A342000EC783F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711842B9A342000EC783F /* AVFoundation.framework */; };
+		86D711872B9A342B00EC783F /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711862B9A342B00EC783F /* libc++.1.tbd */; };
+		86D711892B9A343200EC783F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711882B9A343200EC783F /* VideoToolbox.framework */; };
+		86D711912B9A370E00EC783F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D711902B9A370E00EC783F /* libiconv.tbd */; };
 		86E544912B910020005CBEE8 /* PeekaViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E544902B910020005CBEE8 /* PeekaViewApp.swift */; };
 		86E544932B910020005CBEE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E544922B910020005CBEE8 /* ContentView.swift */; };
 		86E544952B910022005CBEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86E544942B910022005CBEE8 /* Assets.xcassets */; };
@@ -16,6 +34,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		860395C42BB0D41300B53CE5 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
+		8646BA6A2BB0DBA200C9C881 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		8646BA6C2BB0DC1B00C9C881 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8646BA6E2BB0DC4300C9C881 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8646BA702BB0DC8B00C9C881 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		868118622B910644008A21DA /* PeekaView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeekaView-Bridging-Header.h"; sourceTree = "<group>"; };
+		868118642B910645008A21DA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		868118652B910645008A21DA /* GStreamerBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerBackend.h; sourceTree = "<group>"; };
+		868118662B910645008A21DA /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		868118672B910645008A21DA /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gst_ios_init.h; sourceTree = "<group>"; };
+		868118682B910645008A21DA /* GStreamerBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GStreamerBackend.m; sourceTree = "<group>"; };
+		868118692B910645008A21DA /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gst_ios_init.m; sourceTree = "<group>"; };
+		8681186A2B910645008A21DA /* GStreamerBackendProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GStreamerBackendProtocol.swift; sourceTree = "<group>"; };
+		86AB62772BD176220084FA6B /* ColorChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChannelView.swift; sourceTree = "<group>"; };
+		86AB627D2BD178A90084FA6B /* NetworkListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkListener.swift; sourceTree = "<group>"; };
+		86D711802B9A341000EC783F /* libcmph.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcmph.tbd; path = usr/lib/libcmph.tbd; sourceTree = SDKROOT; };
+		86D711822B9A341A00EC783F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		86D711842B9A342000EC783F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		86D711862B9A342B00EC783F /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		86D711882B9A343200EC783F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		86D7118A2B9A343D00EC783F /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		86D711902B9A370E00EC783F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		86E5448D2B910020005CBEE8 /* PeekaView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeekaView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E544902B910020005CBEE8 /* PeekaViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekaViewApp.swift; sourceTree = "<group>"; };
 		86E544922B910020005CBEE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,17 +70,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D711912B9A370E00EC783F /* libiconv.tbd in Frameworks */,
+				86D711812B9A341000EC783F /* libcmph.tbd in Frameworks */,
+				8646BA6B2BB0DBA200C9C881 /* CoreAudio.framework in Frameworks */,
+				8646BA712BB0DC9B00C9C881 /* libresolv.tbd in Frameworks */,
+				8646BA6D2BB0DC1B00C9C881 /* CoreMedia.framework in Frameworks */,
+				86D711832B9A341A00EC783F /* AudioToolbox.framework in Frameworks */,
+				86D711852B9A342000EC783F /* AVFoundation.framework in Frameworks */,
+				86D711872B9A342B00EC783F /* libc++.1.tbd in Frameworks */,
+				86D711892B9A343200EC783F /* VideoToolbox.framework in Frameworks */,
+				860395C52BB0D41300B53CE5 /* GStreamer.framework in Frameworks */,
+				8646BA6F2BB0DC4300C9C881 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86D7117F2B9A341000EC783F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8646BA702BB0DC8B00C9C881 /* libresolv.tbd */,
+				8646BA6E2BB0DC4300C9C881 /* AssetsLibrary.framework */,
+				8646BA6C2BB0DC1B00C9C881 /* CoreMedia.framework */,
+				8646BA6A2BB0DBA200C9C881 /* CoreAudio.framework */,
+				860395C42BB0D41300B53CE5 /* GStreamer.framework */,
+				86D711902B9A370E00EC783F /* libiconv.tbd */,
+				86D7118A2B9A343D00EC783F /* libiconv.2.4.0.tbd */,
+				86D711882B9A343200EC783F /* VideoToolbox.framework */,
+				86D711862B9A342B00EC783F /* libc++.1.tbd */,
+				86D711842B9A342000EC783F /* AVFoundation.framework */,
+				86D711822B9A341A00EC783F /* AudioToolbox.framework */,
+				86D711802B9A341000EC783F /* libcmph.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		86E544842B910020005CBEE8 = {
 			isa = PBXGroup;
 			children = (
 				86E5448F2B910020005CBEE8 /* PeekaView */,
 				86E5448E2B910020005CBEE8 /* Products */,
+				86D7117F2B9A341000EC783F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +127,20 @@
 			isa = PBXGroup;
 			children = (
 				86E544902B910020005CBEE8 /* PeekaViewApp.swift */,
+				86AB62772BD176220084FA6B /* ColorChannelView.swift */,
+				86AB627D2BD178A90084FA6B /* NetworkListener.swift */,
 				86E544922B910020005CBEE8 /* ContentView.swift */,
+				8681186A2B910645008A21DA /* GStreamerBackendProtocol.swift */,
+				868118642B910645008A21DA /* CameraViewController.swift */,
+				868118662B910645008A21DA /* CameraView.swift */,
+				868118652B910645008A21DA /* GStreamerBackend.h */,
+				868118682B910645008A21DA /* GStreamerBackend.m */,
+				868118672B910645008A21DA /* gst_ios_init.h */,
+				868118692B910645008A21DA /* gst_ios_init.m */,
+				868118622B910644008A21DA /* PeekaView-Bridging-Header.h */,
+				86E5449B2B910022005CBEE8 /* PeekaView.xcdatamodeld */,
 				86E544942B910022005CBEE8 /* Assets.xcassets */,
 				86E544992B910022005CBEE8 /* Persistence.swift */,
-				86E5449B2B910022005CBEE8 /* PeekaView.xcdatamodeld */,
 				86E544962B910022005CBEE8 /* Preview Content */,
 			);
 			path = PeekaView;
@@ -105,6 +186,7 @@
 				TargetAttributes = {
 					86E5448C2B910020005CBEE8 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -144,8 +226,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E5449A2B910022005CBEE8 /* Persistence.swift in Sources */,
+				8681186B2B910645008A21DA /* CameraViewController.swift in Sources */,
+				86AB62782BD176220084FA6B /* ColorChannelView.swift in Sources */,
 				86E544932B910020005CBEE8 /* ContentView.swift in Sources */,
+				8681186D2B910645008A21DA /* GStreamerBackend.m in Sources */,
+				8681186E2B910645008A21DA /* gst_ios_init.m in Sources */,
+				86AB627E2BD178A90084FA6B /* NetworkListener.swift in Sources */,
+				8681186C2B910645008A21DA /* CameraView.swift in Sources */,
 				86E544912B910020005CBEE8 /* PeekaViewApp.swift in Sources */,
+				8681186F2B910645008A21DA /* GStreamerBackendProtocol.swift in Sources */,
 				86E5449D2B910022005CBEE8 /* PeekaView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +349,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -272,17 +362,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PeekaView/Preview Content\"";
 				DEVELOPMENT_TEAM = YNW9S2V4Z6;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
+				FRAMEWORK_SEARCH_PATHS = "${HOME}/Library/Developer/GStreamer/iPhone.sdk/";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /Users/devonquispe/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Versions/Current/Headers;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,6 +386,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = teamthree.PeekaView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PeekaView/PeekaView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,25 +398,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PeekaView/Preview Content\"";
 				DEVELOPMENT_TEAM = YNW9S2V4Z6;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
+				FRAMEWORK_SEARCH_PATHS = "${HOME}/Library/Developer/GStreamer/iPhone.sdk/";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /Users/devonquispe/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Versions/Current/Headers;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = teamthree.PeekaView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PeekaView/PeekaView-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
