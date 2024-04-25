@@ -82,6 +82,7 @@ struct MainView: View {
                 }
                 .padding()
             }
+                .frame(width: .infinity, height: 150)
             
             Divider().overlay(.white)
             
@@ -99,17 +100,17 @@ struct MainView: View {
                     onValueChanged: camViewController.updateContrast
                 )
                 
-                ColorChannelView(
-                    value: $camViewController.hue,
-                    captionName: "Hue",
-                    onValueChanged: camViewController.updateHue
-                )
-                
-                ColorChannelView(
-                    value: $camViewController.saturation,
-                    captionName: "Saturation",
-                    onValueChanged: camViewController.updateSaturation
-                )
+//                ColorChannelView(
+//                    value: $camViewController.hue,
+//                    captionName: "Hue",
+//                    onValueChanged: camViewController.updateHue
+//                )
+//
+//                ColorChannelView(
+//                    value: $camViewController.saturation,
+//                    captionName: "Saturation",
+//                    onValueChanged: camViewController.updateSaturation
+//                )
             }
 //            HStack {
 //                ColorChannelView(
@@ -144,7 +145,7 @@ struct MainView: View {
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white)
+        .background(Color.black)
     }
 }
 

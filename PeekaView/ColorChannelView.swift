@@ -19,7 +19,8 @@ struct ColorChannelView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 5)
-        .background(Color.black)
+        .accentColor(.white)
+        .background(Color.blue)
         .edgesIgnoringSafeArea(.all)
         .onChange(of: value) { newValue in
             onValueChanged(newValue)

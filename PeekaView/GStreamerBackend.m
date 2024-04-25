@@ -163,8 +163,8 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerBackend *se
     /* Change the RTSP URL to your desired URL below */
 //    pipeline = gst_parse_launch("playbin uri=rtsp://username:password@ip_address/additional_stream_url", &error);
 //    169.254.41.12
-//    pipeline = gst_parse_launch("playbin uri=rtsp://169.254.15.188:8554/stream", &error);
-    pipeline = gst_parse_launch("playbin uri=rtsp://169.254.41.12:8554/test", &error);
+    pipeline = gst_parse_launch("playbin uri=rtsp://169.254.15.188:8554/stream", &error);
+//    pipeline = gst_parse_launch("playbin uri=rtsp://169.254.41.12:8554/test", &error);
     
     
     if (error && !GST_IS_ELEMENT(pipeline)) {
